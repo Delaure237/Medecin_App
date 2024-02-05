@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "472967929156",
+    "project_id": "specialist-b4ba2",
+    "storage_bucket": "specialist-b4ba2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:472967929156:android:8b0f0460485f1898b90b11",
+        "android_client_info": {
+          "package_name": "com.example.untitled15"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9Fn1UxR17Wdr4wB3mJpcYIDl0UoLA3so"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
