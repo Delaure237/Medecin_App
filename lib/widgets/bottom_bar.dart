@@ -1,11 +1,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:untitled15/Pages/Calendar.dart';
+import 'package:untitled15/Pages/schedule.dart';
 import 'package:untitled15/Pages/HomePage.dart';
 import 'package:untitled15/Pages/message.dart';
 import 'package:untitled15/Pages/profile.dart';
-import 'package:untitled15/widgets/scheduleContainer.dart';
+import 'package:untitled15/constant.dart';
+
 
 class ExploreBar extends StatefulWidget {
   ExploreBarState createState() => ExploreBarState();
@@ -20,10 +21,10 @@ class ExploreBarState extends State<ExploreBar> {
 
 
     final kTabPages =  <Widget> [
-       HomePage(),
-    Message(),
-      Calendar(),
-     Profile(),
+       const HomePage(),
+    const Message(),
+      const Calendar(),
+     const Profile(),
     ];
     final kBottomNavBarItems = <BottomNavigationBarItem>[
      const  BottomNavigationBarItem(icon: Icon( Iconsax.home_15,),label: ""),
@@ -35,7 +36,7 @@ class ExploreBarState extends State<ExploreBar> {
     final bottomNavBar = BottomNavigationBar(
            backgroundColor: Colors.white,
          unselectedItemColor: Colors.grey,
-        selectedItemColor: const Color(0xf000534f),
+        selectedItemColor: primaryColor,
         items: kBottomNavBarItems,
       currentIndex: currentIndex,
         showUnselectedLabels: true,

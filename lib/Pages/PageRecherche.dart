@@ -6,7 +6,7 @@ class Recherche extends MaterialPageRoute<String>{
       super(
         builder: (BuildContext context){
           return Scaffold(
-            body:  Container(
+            body:  SizedBox(
               height: 75,
               child: Row(
                 children: [
@@ -41,7 +41,7 @@ class Recherche extends MaterialPageRoute<String>{
                       onPressed: (){
 
                       },
-                      icon: Icon(Iconsax.search_normal_15))
+                      icon: const Icon(Iconsax.search_normal_15))
                 ],
               ),
             ),

@@ -3,7 +3,9 @@
 import 'package:iconsax/iconsax.dart';
 
 class DoctorSchedule extends StatelessWidget{
-  final Color _iconColor = Color(0xf0589294);
+  final Color _iconColor = const Color(0xf0589294);
+
+  const DoctorSchedule({super.key});
   @override
   Widget build(BuildContext context) {
      return Column(
@@ -16,7 +18,6 @@ class DoctorSchedule extends StatelessWidget{
                  color: Colors.red,
                  borderRadius: BorderRadius.circular(5),
                  image:const  DecorationImage(image: AssetImage("lib/assets/images/profiles/cn.jpg"),fit: BoxFit.fill)
-
              ),
            ),
            title: const Text("Dr Claudel Noubissie",style: TextStyle(
@@ -26,8 +27,8 @@ class DoctorSchedule extends StatelessWidget{
            ),
            maxLines: 1,),
            subtitle:const  Text("Chirugien",style: TextStyle(
-             color: Colors.grey,
-            // fontFamily: "arial",
+             color: Colors.white,
+            fontFamily: "arial",
              fontSize: 12,
            ),),
            trailing: Container(
@@ -49,7 +50,7 @@ class DoctorSchedule extends StatelessWidget{
          Container(
            decoration: BoxDecoration(
              borderRadius: BorderRadius.circular(5),
-             color: const Color(0xf0055a61).withOpacity(0.4),
+             color:const  Color(0xFF0A5964),
            ),
            height: 40,
            width: 270,

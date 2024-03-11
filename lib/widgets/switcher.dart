@@ -1,4 +1,7 @@
+// ignore_for_file: use_super_parameters, sized_box_for_whitespace
+
 import 'package:flutter/cupertino.dart';
+// ignore: unnecessary_import
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:untitled15/shared/appTheme.dart';

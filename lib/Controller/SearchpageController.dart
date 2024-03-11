@@ -1,8 +1,12 @@
+
+
+// ignore_for_file: unused_field, unused_import
+
  import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:untitled15/specialist/specialist_datas.dart';
 
-import '../specialist/specialistFile.dart';
+import '../Models/specialist.dart';
     class SearchController extends StatefulWidget {
       const SearchController({super.key});
 

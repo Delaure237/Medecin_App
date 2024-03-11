@@ -7,10 +7,10 @@ import 'package:untitled15/Services/push_notification.dart';
 import 'package:untitled15/Wrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:untitled15/shared/appTheme.dart';
+import 'constant.dart';
 import 'firebase_options.dart';
 
 void main() async  {
-
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
@@ -25,7 +25,7 @@ void main() async  {
             create: (BuildContext context) => ThemeProvider(true),
         )
       ] ,
-     child: MyApp()
+     child: const MyApp()
   )
   );
 }
@@ -46,10 +46,23 @@ class MyApp extends StatelessWidget {
 
     ],
         child: MaterialApp(
-         debugShowCheckedModeBanner: false,
-         home: Wrapper(),
+          theme: ThemeData.light().copyWith(
+               appBarTheme: const AppBarTheme(
+                 surfaceTintColor: Colors.white,
+                 backgroundColor: Colors.white,
+               ),
+            scaffoldBackgroundColor : bgColor,
+            textTheme : const TextTheme(
+              // ignore: deprecated_member_use
+              bodyText1: TextStyle(
+                fontFamily: "arial",
+              )
+            ),
+            ),
+          debugShowCheckedModeBanner: false,
+          home: const Wrapper(),
+          ),
 
-      )
     );
   }
 }

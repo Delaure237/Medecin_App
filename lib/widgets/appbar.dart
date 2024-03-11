@@ -1,7 +1,7 @@
 
 
   import 'package:flutter/material.dart';
-  import 'package:badges/badges.dart' as badges;
+  //import 'package:badges/badges.dart' as badges;
 
 
   AppBar header(context){
@@ -23,7 +23,7 @@
 
            ),
          ),
-         SizedBox(height: 3,),
+         const SizedBox(height: 3,),
 
        ],
      ),

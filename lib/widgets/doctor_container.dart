@@ -1,7 +1,9 @@
 
+// ignore_for_file: must_be_immutable
+
   import 'package:flutter/material.dart';
 import 'package:untitled15/shared/profilePage.dart';
-import 'package:untitled15/specialist/specialistFile.dart';
+import 'package:untitled15/Models/specialist.dart';
 import 'package:untitled15/specialist/specialist_datas.dart';
 import 'package:untitled15/widgets/doctor_cellView.dart';
 
@@ -9,10 +11,11 @@ class DoctorContainer extends StatelessWidget {
 
 
  List<Specialist> doc = getSpecialistsData();
+
+  DoctorContainer({super.key});
   @override
   Widget build(BuildContext context) {
     return Card(
-
       elevation: 2,
       surfaceTintColor: Colors.white,
          child: Container(
@@ -22,23 +25,20 @@ class DoctorContainer extends StatelessWidget {
            ),
            height: 500,
 
-         child:SizedBox(
-           height: 100,
+         child:Expanded(
+                flex: 1,
            child:  ListView.separated(
              shrinkWrap: true,
-             physics: NeverScrollableScrollPhysics(),
+             physics: const NeverScrollableScrollPhysics(),
              itemBuilder: (BuildContext context,int index){
                Specialist doctor = doc[index];
-
                 return GestureDetector(
                   child:  DoctorCellView(doctor: doctor),
                    onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage(docta: doc[index],))
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProfilePage(doctor: doc[index],))
                      );
                    },
                 );
-
-
              },
              separatorBuilder: ((BuildContext context ,index) => Container(
                child: const Padding(

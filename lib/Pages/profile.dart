@@ -1,14 +1,13 @@
 
+// ignore_for_file: unused_import
+
    import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:untitled15/Pages/HomePage.dart';
 import 'package:untitled15/Services/auth.dart';
 import 'package:untitled15/datas/UserProfileDatas.dart';
-import 'package:untitled15/shared/constants.dart';
-//import 'package:untitled15/shared/profilePage.dart';
-//import 'package:untitled15/widgets/fontManager.dart';
-  // import 'package:chips_choice/chips_choice.dart';
-
 import '../Models/profile_set.dart';
+import '../constant.dart';
 
 
 class Profile extends StatefulWidget{
@@ -20,18 +19,25 @@ ProfileState createState() => ProfileState();
 }
 class ProfileState extends State<Profile>{
   final AuthService _auth = AuthService();
-  final Setting param = Setting();
+  final Setting param = const Setting();
   //List<UserProfile>  user = Data();
   @override
   Widget build(BuildContext context){
-    return Scaffold(
+    return SafeArea(child:
+      Scaffold(
       appBar: AppBar(
+        surfaceTintColor: Colors.transparent,
         centerTitle: true,
-        title:const Text("Profile",style: AppStyle.appsBar,),
-        leading: IconButton.outlined(onPressed: (){}, icon: const Icon(Icons.arrow_back_ios,color: Colors.black,)),
+        title: const Text("Profile",style:titleStyle, ),
+        leading: GestureDetector(
+          onTap:(){
+            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>const HomePage()));
+          },
+        child: const Icon(Icons.arrow_back_ios,color: Colors.black,)),
       ),
-      body:SingleChildScrollView(
-
+      body:Padding(
+       padding:const EdgeInsets.symmetric(horizontal:defaultPadding),
+      child: SingleChildScrollView(
       child:Column(
       children:[
         Container(
@@ -50,11 +56,8 @@ class ProfileState extends State<Profile>{
             size: 50,
           ),
         ),
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal:8),
 
-           child: ListView.builder(
-
+           ListView.builder(
              shrinkWrap: true,
              itemCount: param.getUser().length,
              //user.length,
@@ -87,49 +90,50 @@ class ProfileState extends State<Profile>{
                        )
                        ) ,
                      const   SizedBox(height: 24,),
-
                      ],
-
                    );
-
                 }
             ),
-
-         ),
         GestureDetector(
           onTap:() async {
              setState(() {
               _auth.signOut();
              });
           },
-          child:Wrap(
+          child:GestureDetector(
+            onTap: (){},
+         child: Wrap(
             runSpacing: 12,
             //runAlignment: WrapAlignment.end,
             crossAxisAlignment: WrapCrossAlignment.end,
             verticalDirection: VerticalDirection.down,
             alignment: WrapAlignment.center,
             children: [
-              Text("Log Out",style: AppStyle.appsBar,),
+             const  Text("Log Out",style: titleStyle,),
               Container(
                 height: 30,
                 width: 30,
-                decoration: BoxDecoration(
+                decoration:const  BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.green,
                 ),
-                child: IconButton(onPressed: (){}, icon: Icon(Icons.login_outlined,color: Colors.white,size: 16,semanticLabel: "log",)),
-              ),
-              SizedBox(width: 12,),
+                child: const  Icon(Icons.login_outlined,color: Colors.white,size: 16,semanticLabel: "log",)),
+            ]
+      ),
 
-            ],
+        ),
+
+
+
         )
-        )
+
 
 
          ]
       )
       )
-
+      )
+      )
     );
   }
 }

@@ -1,8 +1,6 @@
 
    import 'package:flutter/material.dart';
-   import 'package:untitled15/specialist/specialistFile.dart';
-
-import '../specialist/specialist_datas.dart';
+   import 'package:untitled15/Models/specialist.dart';
 class DoctorCellView extends StatelessWidget {
 
 final Specialist doctor;
@@ -13,7 +11,7 @@ final Specialist doctor;
   Widget build(BuildContext context) {
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 12),
+      padding: const EdgeInsets.symmetric(horizontal: 12),
      child: ListTile(
         leading:  Container(
           height: 40,
@@ -28,8 +26,10 @@ final Specialist doctor;
         title: Text(
           doctor.name,
           style: const TextStyle(
+              wordSpacing: -1,
+              letterSpacing: -1,
               color: Colors.black,
-              fontSize: 12,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
               fontFamily: "arial",
 
@@ -55,13 +55,14 @@ final Specialist doctor;
         trailing: Column(
         mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 15,),
+           const  SizedBox(height: 15,),
               Wrap(
                 runAlignment:WrapAlignment.end,
                 crossAxisAlignment: WrapCrossAlignment.center,
                 spacing: 0,
-          children: [ Icon(Icons.star_rate_rounded,color: Colors.yellow,size: 16,),
-                        Text("${doctor.star}",style: TextStyle(
+          children: [
+            Icon(Icons.star_rate_rounded,color: Colors.yellowAccent.shade200,size: 16,),
+                        Text("${doctor.star}",style:const  TextStyle(
                           fontWeight: FontWeight.bold,
                         ),),
                ]
